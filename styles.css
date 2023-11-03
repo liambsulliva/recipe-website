@@ -1,0 +1,22 @@
+* {
+    font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+li a {
+    text-decoration: none;
+    color: rgb(85, 121, 221);
+}
+
+.headers {
+    color: #000061;
+}
+
+iframe {
+    height: 100dvh;
+}

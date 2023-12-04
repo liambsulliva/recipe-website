@@ -1,22 +1,28 @@
 * {
+    background-color: #202e32;
     font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
     padding: 0;
 }
 
-li {
+h1, p {
+    color: #dfdcb9;
+}
+  
+h2, h3, h4, h5, h6, a{
+    color: #85937a;
+}
+  
+ul, ol {
     list-style: none;
+    padding: 0;
+}
+  
+li {
+    color: #a9af90;
 }
 
-li a {
+a {
     text-decoration: none;
-    color: rgb(85, 121, 221);
 }
-
-.headers {
-    color: #000061;
-}
-
-iframe {
-    height: 100dvh;
-}
+  

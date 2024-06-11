@@ -1,5 +1,13 @@
 ---
-import Header from "../components/Header.astro"
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import NavBtn from "../components/NavBtn.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("recipes")).sort(
+  (a, b) => Date.parse(b.data.date) - Date.parse(a.data.date)
+);
+
 ---
 
 <html lang="en">
@@ -8,14 +16,19 @@ import Header from "../components/Header.astro"
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Recipes</title>
+		<title>Home</title>
 	</head>
 	<body>
 		<Header />
-		<div>
-			<h1 class="text-6xl font-bold m-16 text-center">Recipes</h1>
-			
+		<div class="m-16 mb-8">
+			<h1 class="text-9xl font-bold mb-8">Explore</h1>
+			<div class="flex flex-row gap-6">
+				<NavBtn label="Carbs"/>
+				<NavBtn label="Fats"/>
+				<NavBtn label="Proteins"/>
+			</div>
+				
 		</div>
-		
+		<Footer />
 	</body>
 </html>

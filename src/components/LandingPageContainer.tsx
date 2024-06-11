@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from './Button';
 
 const LandingPageContainer: React.FC<{ posts: any[] }> = ({ posts }) => {
+    const [currentIndex, setCurrentIndex] = useState(0);
     const images = [
         {
             src: "/bananas.jpg",
@@ -16,7 +17,6 @@ const LandingPageContainer: React.FC<{ posts: any[] }> = ({ posts }) => {
             alt: "eggs",
         }
     ];
-    const [currentIndex, setCurrentIndex] = useState(0);
 
     return (
         <div className="flex flex-row justify-between">
@@ -31,7 +31,7 @@ const LandingPageContainer: React.FC<{ posts: any[] }> = ({ posts }) => {
                     {posts.map((post: any) => (
                         <>
                             <div className="border-t border-gray-300"></div>
-                            <a href={`/${post.data}`} className="px-4 py-1 pb-6">
+                            <a href={`/${post.slug}`} className="px-4 py-1 pb-6">
                                 <h2 className="text-2xl font-bold">{post.data.title}</h2>
                                 <p className="text-gray-500">{post.data.description}</p>
                                 <p className="text-gray-500">{post.data.date}</p>

@@ -5,8 +5,8 @@ import { getCollection } from "astro:content";
 import LandingPageContainer from "../components/LandingPageContainer";
 
 const posts = (await getCollection("recipes")).sort(
-  (a, b) => Date.parse(b.data.date) - Date.parse(a.data.date)
-);
+	(a, b) => Date.parse(b.data.date) - Date.parse(a.data.date)
+).slice(0, 3);
 
 ---
 

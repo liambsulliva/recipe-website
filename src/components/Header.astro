@@ -1,15 +1,12 @@
 ---
 import { Icon } from 'astro-icon/components';
-import NavBtn from './NavBtn.astro';
 ---
-<header class='relative flex items-center h-12 p-8 font-bold'>
-	<a class='text-lg mr-auto m-2' href='/'>Recipes</a>
-	<div class="flex flex-row gap-4 items-center font-medium">
-		<div class="flex flex-row gap-6 m-2">
-			<Icon class="cursor-pointer" name="material-symbols:dark-mode" size={24} />
-			<Icon class="cursor-pointer" name="material-symbols:search" size={24} />
-			<Icon class="cursor-pointer md:hidden" name="material-symbols:menu-rounded" size={24} />
-		</div>
+<header class='relative flex justify-between items-center h-12 p-8 font-bold bg-white z-10'>
+	<a class='max-md:hidden text-lg mr-auto m-2' href='/'>Recipes</a>
+	<a class="md:hidden" href="/"><Icon name="material-symbols:dining-rounded" size={36} /></a>
+	<div class="flex flex-row gap-5 items-center font-medium">
+		<Icon class="cursor-pointer" name="material-symbols:dark-mode" size={24} />
+		<Icon class="cursor-pointer" name="material-symbols:search" size={24} />
 	</div>
 </header>
 

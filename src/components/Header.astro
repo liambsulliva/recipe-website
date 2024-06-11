@@ -10,10 +10,17 @@ import { Icon } from 'astro-icon/components';
     </div>
 </header>
 <script type="module">
-	// Run darkmode toggle client-side
+    // Run darkmode toggle client-side
     const toggleDarkMode = () => {
         document.documentElement.classList.toggle('dark');
+        localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
     }
-	document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+    document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+
+    // Retrieve dark mode preference from localStorage
+    const darkModePreference = localStorage.getItem('darkMode');
+    if (darkModePreference === 'true') {
+        document.documentElement.classList.add('dark');
+    }
 </script>
 

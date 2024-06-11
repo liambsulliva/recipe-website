@@ -6,7 +6,7 @@ import LandingPageContainer from "../components/LandingPageContainer";
 
 const posts = (await getCollection("recipes")).sort(
 	(a, b) => Date.parse(b.data.date) - Date.parse(a.data.date)
-).slice(0, 3);
+).slice(0, 3); // Just for testing...
 
 ---
 

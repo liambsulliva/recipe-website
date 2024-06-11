@@ -1,20 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from './Button';
 
 const LandingPageContainer: React.FC<{ posts: any[] }> = ({ posts }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [darkModeEnabled, setDarkModeEnabled] = useState(false);
+
+    useEffect(() => {
+        const isDarkModeEnabled = localStorage.getItem('darkMode') === 'true';
+        setDarkModeEnabled(isDarkModeEnabled);
+    }, [currentIndex]);
+
     const images = [
         {
             src: "/bananas.jpg",
             alt: "bananas",
         },
         {
+            src: "/bananas-dark.jpeg",
+            alt: "bananas-dark",
+        },
+        {
             src: "/avocados.jpg",
             alt: "avocados",
         },
         {
+            src: "/avocados-dark.jpeg",
+            alt: "avocados-dark",
+        },
+        {
             src: "/eggs.jpg",
             alt: "eggs",
+        },
+        {
+            src: "/eggs-dark.jpeg",
+            alt: "eggs-dark",
         }
     ];
 
@@ -24,8 +43,8 @@ const LandingPageContainer: React.FC<{ posts: any[] }> = ({ posts }) => {
                 <h1 className="text-8xl max-md:text-7xl font-bold mb-4">Explore</h1>
                 <div className="flex flex-row gap-6 my-6 mx-2">
                     <Button label="Carbs" onClick={() => setCurrentIndex(0)} />
-                    <Button label="Fats" onClick={() => setCurrentIndex(1)} />
-                    <Button label="Proteins" onClick={() => setCurrentIndex(2)} />
+                    <Button label="Fats" onClick={() => setCurrentIndex(2)} />
+                    <Button label="Proteins" onClick={() => setCurrentIndex(4)} />
                 </div>
                 <div className="flex flex-col gap-6">
                     {posts.map((post: any) => (
@@ -41,7 +60,7 @@ const LandingPageContainer: React.FC<{ posts: any[] }> = ({ posts }) => {
                 </div>
             </div>
             <div className="w-1/2">
-                <img src={images[currentIndex].src} alt={images[currentIndex].alt} className="w-full h-screen object-cover" />
+                <img src={images[currentIndex + (darkModeEnabled ? 1 : 0)].src} alt={images[currentIndex + (darkModeEnabled ? 1 : 0)].alt} className="w-full h-screen object-cover" />
             </div>
         </div>
     );

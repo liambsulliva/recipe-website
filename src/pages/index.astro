@@ -1,27 +1,12 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Button from "../components/Button.astro";
 import { getCollection } from "astro:content";
+import LandingPageContainer from "../components/LandingPageContainer";
 
 const posts = (await getCollection("recipes")).sort(
   (a, b) => Date.parse(b.data.date) - Date.parse(a.data.date)
 );
-
-const images = [
-	{
-		src: "/bananas.jpg",
-		alt: "bananas",
-	},
-	{
-		src: "/avocados.jpg",
-		alt: "avocados",
-	},
-	{
-		src: "/eggs.jpg",
-		alt: "eggs",
-	}
-];
 
 ---
 
@@ -35,31 +20,7 @@ const images = [
 	</head>
 	<body class="bg-[#f8fafc] dark:bg-[#181818] text-black dark:text-white">
 		<Header />
-		<div class="flex flex-row justify-between">
-			<div class="m-16 mb-8 flex-grow">
-				<h1 class="text-8xl max-md:text-7xl font-bold mb-4">Explore</h1>
-				<div class="flex flex-row gap-6 my-6 mx-2">
-					<Button label="All"/>
-					<Button label="Carbs" onClick=""/>
-					<Button label="Fats"/>
-					<Button label="Proteins"/>
-				</div>
-				<div class="flex flex-col gap-6">
-					{posts.map((post) => (
-						<div class="border-t border-gray-300"></div>
-						<a href={`/${post.data}`} class="px-4 py-1 pb-6">
-							<h2 class="text-2xl font-bold">{post.data.title}</h2>
-							<p class="text-gray-500">{post.data.description}</p>
-							<p class="text-gray-500">{post.data.date}</p>
-						</a>
-					))}
-				</div>
-			</div>
-			<div class="w-1/2">
-				<img src={images[0].src} alt={images[0].alt} class="w-full h-screen object-cover"/>
-			</div>
-			</div>
-		</div>
+		<LandingPageContainer {posts} client:load />
 		<Footer /> 
 	</body>
 </html>

@@ -1,7 +1,7 @@
 ---
-const { label } = Astro.props;
+const { label, onClick } = Astro.props;
 ---
 
-<a href="/" class=" text-xl font-light px-4 py-2 hover:bg-slate-100 rounded-md transition duration-100 ease-in-out">
+<button onclick={onClick} class=" text-xl font-light px-4 py-2 hover:bg-gray-200 dark:hover:bg-[#232323] rounded-md transition duration-100 ease-in-out">
     {label}
-</a>
+</button>

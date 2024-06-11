@@ -41,7 +41,7 @@ const LandingPageContainer: React.FC<{ posts: any[] }> = ({ posts }) => {
         <div className="flex flex-row justify-between">
             <div className="m-16 mb-8 flex-grow">
                 <h1 className="text-8xl max-md:text-7xl font-bold mb-4">Explore</h1>
-                <div className="flex flex-row gap-6 my-6 mx-2">
+                <div className="flex flex-row gap-6 max-[430px]:gap-0 max-[430px]:mx-0 my-6 mx-2">
                     <Button label="Carbs" onClick={() => setCurrentIndex(0)} />
                     <Button label="Fats" onClick={() => setCurrentIndex(2)} />
                     <Button label="Proteins" onClick={() => setCurrentIndex(4)} />
@@ -59,7 +59,7 @@ const LandingPageContainer: React.FC<{ posts: any[] }> = ({ posts }) => {
                     ))}
                 </div>
             </div>
-            <div className="w-1/2">
+            <div className="w-1/2 max-sm:hidden">
                 <img src={images[currentIndex + (darkModeEnabled ? 1 : 0)].src} alt={images[currentIndex + (darkModeEnabled ? 1 : 0)].alt} className="w-full h-screen object-cover" />
             </div>
         </div>

@@ -15,6 +15,7 @@ import Search from './Search.astro';
     const toggleDarkMode = () => {
         document.documentElement.classList.toggle('dark');
         localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+        document.getElementById('darkModeToggle').setAttribute('name', 'material-symbols:sunny');
     }
     document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
 

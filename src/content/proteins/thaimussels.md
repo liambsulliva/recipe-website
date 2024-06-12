@@ -1,7 +1,8 @@
 ---
 layout: ../../layouts/Page.astro
 title: "Thai Curry Mussels"
-description: "Tasty Protein Bombs."
+description: "Tiny Protein Bombs."
+img: "https://images.unsplash.com/photo-1515681778128-ed5f11c50b77?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 ---
 
 ### Ingredients

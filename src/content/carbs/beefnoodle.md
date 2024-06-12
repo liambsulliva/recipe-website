@@ -1,7 +1,8 @@
 ---
 layout: ../../layouts/Page.astro
 title: "Beef Noodle Skillet"
-description: "The Protein Pasta Go-To."
+description: "The Protein Powerhouse."
+img: "https://images.unsplash.com/photo-1608219992759-8d74ed8d76eb?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 ---
 
 ### Ingredients

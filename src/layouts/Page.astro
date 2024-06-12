@@ -12,23 +12,13 @@ const { title, description } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<style>
-			body {
-				display: flex;
-				flex-direction: column;
-				min-height: 100vh;
-			}
-
-			.content {
-				flex: 1;
-			}
-		</style>
 	</head>
 	<body class="bg-[#f8fafc] dark:bg-[#0f0f0f] text-black dark:text-white">
 		<Header />
-		<div class="content flex flex-col items-center p-8">
+		<div class="content flex flex-col items-center p-8 h-screen text-center">
 			<h1 class="font-bold text-6xl">{title}</h1>
-            <p class="font-light text-md p-2">{description}</p>
+			<p class="font-light text-md p-2">{description}</p>
+			<slot />
 		</div>
 		<Footer />
 	</body>

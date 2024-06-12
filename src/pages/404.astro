@@ -1,5 +1,10 @@
 ---
 import Page from "../layouts/Page.astro";
+import Button from "../components/Button";
 ---
 
-<Page title="404" description="Page not found."></Page>
+<Page title="404" description="Page not found.">
+    <div class="flex flex-col items-center">
+        <a href="/"><Button label="Go Back" onClick={() => {}}></Button></a>
+    </div>
+</Page>

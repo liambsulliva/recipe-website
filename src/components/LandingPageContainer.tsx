@@ -38,7 +38,7 @@ const LandingPageContainer: React.FC<{ carbs: any[], fats: any[], proteins: any[
     ];
 
     return (
-        <div className="flex flex-row justify-between">
+        <div className="flex flex-row justify-between h-screen" style={{ maxHeight: 'calc(100vh * 12/13)' }}>
             <div className="m-16 mb-8 flex-grow">
                 <h1 className="text-8xl max-md:text-7xl font-bold mb-4">Explore</h1>
                 <div className="flex flex-row gap-6 max-[430px]:gap-0 max-[430px]:mx-0 my-6 mx-2">
@@ -46,7 +46,7 @@ const LandingPageContainer: React.FC<{ carbs: any[], fats: any[], proteins: any[
                     <Button label="Fats" onClick={() => setCurrentIndex(2)} />
                     <Button label="Proteins" onClick={() => setCurrentIndex(4)} />
                 </div>
-                <div style={{ maxHeight: 'calc(100vh * 3/4)' }} className="flex flex-col gap-6 max-md:h-fit overflow-y-auto">
+                <div style={{ maxHeight: 'calc(100vh * 5/6)' }} className="flex flex-col gap-6 max-md:h-fit overflow-y-auto">
                     {currentIndex === 0 && carbs.map((post: any) => (
                         <>
                             <div className="border-t border-gray-300"></div>
@@ -80,7 +80,8 @@ const LandingPageContainer: React.FC<{ carbs: any[], fats: any[], proteins: any[
                 </div>
             </div>
             <div className="w-1/2 max-sm:hidden">
-                <img src={images[currentIndex + (darkModeEnabled ? 1 : 0)].src} alt={images[currentIndex + (darkModeEnabled ? 1 : 0)].alt} className="w-full h-screen object-cover" />
+                {!darkModeEnabled && <img src={images[currentIndex].src} alt={images[currentIndex].alt} className="w-full h-full object-cover"/>}
+                {darkModeEnabled && <img src={images[currentIndex + 1].src} alt={images[currentIndex + 1].alt} className="w-full h-full object-cover"/>}
             </div>
         </div>
     );

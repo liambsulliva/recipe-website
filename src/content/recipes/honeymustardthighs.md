@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/Page.astro
 title: "Honey Mustard Chicken Thighs"
-description: "Sharing is caring, why you might try a tandem"
+description: "Tangy Sweet Perfection."
 date: 2023-03-30T17:11:05.000+0100
 ---
 

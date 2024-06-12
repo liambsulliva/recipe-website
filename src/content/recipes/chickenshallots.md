@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/Page.astro
 title: "Chicken Shallots"
-description: "Sharing is caring, why you might try a tandem"
+description: "Creamy and Wine-ey?"
 date: 2023-03-30T17:11:05.000+0100
 ---
 

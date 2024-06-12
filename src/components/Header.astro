@@ -1,28 +1,14 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Search from './Search.astro';
+import DarkModeToggle from './DarkModeToggle.tsx';
 ---
 <header class='relative flex justify-between items-center h-12 w-full p-8 max-md:pl-5 font-bold z-10'>
     <a class='max-md:hidden text-lg' href='/'>Recipes</a>
     <a class="md:hidden" href="/"><Icon name="material-symbols:dining-rounded" size={36} /></a>
     <div class="flex flex-row gap-5 max-md:gap-3 items-center font-medium">
         {/*<Search /> Implement Later */}
-        <Icon id="darkModeToggle" class="cursor-pointer" name="material-symbols:dark-mode" size={24} />
+        <DarkModeToggle client:load />
     </div>
 </header>
-<script type="module">
-    // Run darkmode toggle client-side
-    const toggleDarkMode = () => {
-        document.documentElement.classList.toggle('dark');
-        localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
-        document.getElementById('darkModeToggle').setAttribute('name', 'material-symbols:sunny');
-    }
-    document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
-
-    // Retrieve dark mode preference from localStorage
-    const darkModePreference = localStorage.getItem('darkMode');
-    if (darkModePreference === 'true') {
-        document.documentElement.classList.add('dark');
-    }
-</script>
 

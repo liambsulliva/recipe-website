@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@iconify-icons/material-symbols": "^1.2.58",
-    "@iconify-json/material-symbols": "^1.1.82"
+    "@iconify-json/material-symbols": "^1.1.82",
+    "@tailwindcss/typography": "^0.5.13"
   }
 }

@@ -2,6 +2,10 @@
 layout: ../../layouts/Page.astro
 title: "Beef Noodle Skillet"
 description: "The Protein Pasta Go-To."
+img: {
+    src: "",
+    alt: ""
+}
 ---
 
 ### Ingredients

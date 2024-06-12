@@ -53,7 +53,6 @@ const LandingPageContainer: React.FC<{ carbs: any[], fats: any[], proteins: any[
                             <a href={`/${post.slug}`} className="px-4 py-1 pb-6">
                                 <h2 className="text-2xl font-bold">{post.data.title}</h2>
                                 <p className="text-gray-500">{post.data.description}</p>
-                                <p className="text-gray-500">{post.data.date}</p>
                             </a>
                         </>
                     ))}
@@ -63,7 +62,6 @@ const LandingPageContainer: React.FC<{ carbs: any[], fats: any[], proteins: any[
                             <a href={`/${post.slug}`} className="px-4 py-1 pb-6">
                                 <h2 className="text-2xl font-bold">{post.data.title}</h2>
                                 <p className="text-gray-500">{post.data.description}</p>
-                                <p className="text-gray-500">{post.data.date}</p>
                             </a>
                         </>
                     ))}
@@ -73,7 +71,6 @@ const LandingPageContainer: React.FC<{ carbs: any[], fats: any[], proteins: any[
                             <a href={`/${post.slug}`} className="px-4 py-1 pb-6">
                                 <h2 className="text-2xl font-bold">{post.data.title}</h2>
                                 <p className="text-gray-500">{post.data.description}</p>
-                                <p className="text-gray-500">{post.data.date}</p>
                             </a>
                         </>
                     ))}

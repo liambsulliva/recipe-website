@@ -2,7 +2,6 @@
 layout: ../../layouts/Page.astro
 title: "Chicken Shallots"
 description: "Creamy and Wine-ey?"
-date: 2023-03-30T17:11:05.000+0100
 ---
 
 ### Ingredients

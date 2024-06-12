@@ -2,7 +2,6 @@
 layout: ../../layouts/Page.astro
 title: "Honey Mustard Chicken Thighs"
 description: "Tangy Sweet Perfection."
-date: 2023-03-30T17:11:05.000+0100
 ---
 
 ### Ingredients (Sauce)

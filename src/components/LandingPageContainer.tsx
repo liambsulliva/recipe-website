@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Button from './Button';
 
-const LandingPageContainer: React.FC<{ posts: any[] }> = ({ posts }) => {
+const LandingPageContainer: React.FC<{ carbs: any[], fats: any[], proteins: any[] }> = ({ carbs, fats, proteins }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [darkModeEnabled, setDarkModeEnabled] = useState(false);
 
@@ -46,8 +46,28 @@ const LandingPageContainer: React.FC<{ posts: any[] }> = ({ posts }) => {
                     <Button label="Fats" onClick={() => setCurrentIndex(2)} />
                     <Button label="Proteins" onClick={() => setCurrentIndex(4)} />
                 </div>
-                <div className="flex flex-col gap-6">
-                    {posts.map((post: any) => (
+                <div style={{ maxHeight: 'calc(100vh * 3/4)' }} className="flex flex-col gap-6 max-md:h-fit overflow-y-auto">
+                    {currentIndex === 0 && carbs.map((post: any) => (
+                        <>
+                            <div className="border-t border-gray-300"></div>
+                            <a href={`/${post.slug}`} className="px-4 py-1 pb-6">
+                                <h2 className="text-2xl font-bold">{post.data.title}</h2>
+                                <p className="text-gray-500">{post.data.description}</p>
+                                <p className="text-gray-500">{post.data.date}</p>
+                            </a>
+                        </>
+                    ))}
+                    {currentIndex === 2 && fats.map((post: any) => (
+                        <>
+                            <div className="border-t border-gray-300"></div>
+                            <a href={`/${post.slug}`} className="px-4 py-1 pb-6">
+                                <h2 className="text-2xl font-bold">{post.data.title}</h2>
+                                <p className="text-gray-500">{post.data.description}</p>
+                                <p className="text-gray-500">{post.data.date}</p>
+                            </a>
+                        </>
+                    ))}
+                    {currentIndex === 4 && proteins.map((post: any) => (
                         <>
                             <div className="border-t border-gray-300"></div>
                             <a href={`/${post.slug}`} className="px-4 py-1 pb-6">

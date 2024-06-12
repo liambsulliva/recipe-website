@@ -4,9 +4,15 @@ import Footer from "../components/Footer.astro";
 import { getCollection } from "astro:content";
 import LandingPageContainer from "../components/LandingPageContainer";
 
-const posts = (await getCollection("recipes")).sort(
-	(a, b) => Date.parse(b.data.date) - Date.parse(a.data.date)
-).slice(0, 3); // Just for testing...
+const carbs = (await getCollection("carbs")).sort(
+	(a, b) => a.data.title.localeCompare(b.data.title)
+);
+const fats = (await getCollection("fats")).sort(
+	(a, b) => a.data.title.localeCompare(b.data.title)
+);
+const proteins = (await getCollection("proteins")).sort(
+	(a, b) => a.data.title.localeCompare(b.data.title)
+);
 
 ---
 
@@ -20,7 +26,7 @@ const posts = (await getCollection("recipes")).sort(
 	</head>
 	<body class="bg-[#f8fafc] dark:bg-[#0f0f0f] text-black dark:text-white">
 		<Header />
-		<LandingPageContainer {posts} client:load />
+		<LandingPageContainer {carbs} {fats} {proteins} client:load />
 		<Footer /> 
 	</body>
 </html>

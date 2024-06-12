@@ -3,23 +3,46 @@ import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("recipes");
-  return posts.map((post: any) => {
-    const { slug } = post;
-    return {
+  const carbs = await getCollection("carbs");
+  const fats = await getCollection("fats");
+  const proteins = await getCollection("proteins");
+
+  const paths: object[] = [];
+
+  // Add paths for carbs
+  carbs.forEach((carb: any) => {
+    const { slug } = carb;
+    paths.push({
       params: { slug },
-      props: post,
-    };
+      props: carb,
+    });
   });
+
+  // Add paths for fats
+  fats.forEach((fat: any) => {
+    const { slug } = fat;
+    paths.push({
+      params: { slug },
+      props: fat,
+    });
+  });
+
+  // Add paths for proteins
+  proteins.forEach((protein: any) => {
+    const { slug } = protein;
+    paths.push({
+      params: { slug },
+      props: protein,
+    });
+  });
+
+  return paths;
 }
 
-type Props = CollectionEntry<"recipes">;
+type Props = CollectionEntry<"carbs"> | CollectionEntry<"fats"> | CollectionEntry<"proteins">;
 
 const post: Props = Astro.props;
 const { Content } = await post.render();
-const {
-  data: { description, title },
-} = post;
 
 ---
 

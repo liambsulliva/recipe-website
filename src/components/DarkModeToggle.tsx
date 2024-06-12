@@ -5,6 +5,11 @@ export default function DarkModeToggle(props: SVGProps<SVGSVGElement>) {
     const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {
+        const isItemExists = localStorage.getItem('darkMode') !== null;
+        if (!isItemExists) {
+            const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            localStorage.setItem('darkMode', prefersDarkMode.toString());
+        }
         const isDarkMode = localStorage.getItem('darkMode') === 'true';
         setDarkMode(isDarkMode);
     }, []);

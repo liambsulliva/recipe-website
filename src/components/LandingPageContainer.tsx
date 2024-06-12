@@ -46,7 +46,7 @@ const LandingPageContainer: React.FC<{ carbs: any[], fats: any[], proteins: any[
                     <Button label="Fats" onClick={() => setCurrentIndex(2)} />
                     <Button label="Proteins" onClick={() => setCurrentIndex(4)} />
                 </div>
-                <div style={{ maxHeight: 'calc(100vh * 5/6)' }} className="flex flex-col gap-6 max-md:h-fit overflow-y-auto">
+                <div style={{ maxHeight: 'calc(100vh * 5/6)' }} className="flex flex-col gap-6">
                     {currentIndex === 0 && carbs.map((post: any) => (
                         <>
                             <div className="border-t border-gray-300"></div>
@@ -76,7 +76,7 @@ const LandingPageContainer: React.FC<{ carbs: any[], fats: any[], proteins: any[
                     ))}
                 </div>
             </div>
-            <div className="w-1/2 max-sm:hidden">
+            <div className="w-1/2 max-md:hidden">
                 {!darkModeEnabled && <img src={images[currentIndex].src} alt={images[currentIndex].alt} className="w-full h-full object-cover"/>}
                 {darkModeEnabled && <img src={images[currentIndex + 1].src} alt={images[currentIndex + 1].alt} className="w-full h-full object-cover"/>}
             </div>

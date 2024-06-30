@@ -1,8 +1,8 @@
 import { createSelector } from 'reselect';
-import { carbRecipe, NotificationItem, Settings, TodoListItem } from '../mock';
+import { recipe, NotificationItem, Settings, TodoListItem } from '../mock';
 
 export interface RootState {
-    carbRecipes: carbRecipe[]
+    recipes: recipe[]
     lists: TodoListItem[]
     notifications: NotificationItem[]
     settings: Settings
@@ -10,11 +10,11 @@ export interface RootState {
   
 export const createAppSelector = createSelector.withTypes<RootState>()
 
-export const selectCarbs = createAppSelector(
+export const selectRecipes = createAppSelector(
     [
-      state => state.carbRecipes
+      state => state.recipes
     ],
-    carbRecipes => carbRecipes
+    recipes => recipes
   )
 
 export const selectLists = createAppSelector(

@@ -1,4 +1,4 @@
-export type carbRecipe = {
+export type recipe = {
   title: string;
   description: string;
   img: string;
@@ -6,7 +6,7 @@ export type carbRecipe = {
   steps: string[];
 };
 
-export const carbRecipes: carbRecipe[] = [
+export const recipes: recipe[] = [
   {
     title: "Beef Noodle Skillet",
     description: "The Protein Powerhouse.",
@@ -88,214 +88,152 @@ export const carbRecipes: carbRecipe[] = [
       "Turn off the heat. Add the Parmesan cheese and green onion. Toss to combine and season to taste.",
     ],
   },
-];
-
-export type fatRecipe = {
-  title: string;
-  description: string;
-  img: string;
-  ingredients: string[];
-  steps: string[];
-};
-
-export const chickenShallots: fatRecipe = {
-  title: "Chicken Shallots",
-  description: "Creamy and Wine-ey?",
-  img: "https://images.unsplash.com/photo-1577194509876-4bb24787a641?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  ingredients: [
-    "8 Chicken Thighs",
-    "2 tbsp flour",
-    "2 tbsp butter",
-    "12 peeled shallots",
-    "2 cups white wine",
-    "2 tbsp dijon mustard",
-    "2 tsp thyme",
-    "2 Cups halved cherry/grape tomatoes",
-    "Salt/Pepper",
-  ],
-  steps: [
-    "Pat chicken thighs dry.",
-    "Sprinkle with flour, salt, pepper.",
-    "Melt butter in a large skillet. Medium-high heat.",
-    "Cook chicken until browned. Remove from skillet.",
-    "Add shallots, saute in the chicken fat. 10 minutes.",
-    "Add wine, mustard, thyme, tomatoes, and chicken thighs. Set to a low simmer for 30 minutes.",
-    "Remove heat and lid, allow sauce to thicken for 15 minutes.",
-  ],
-};
-
-export const honeyMustardChickenThighs: fatRecipe = {
-  title: "Honey Mustard Chicken Thighs",
-  description: "Tangy Sweet Perfection.",
-  img: "./honeymustardchicken.jpg",
-  ingredients: [
-    "1/4 Cup Honey",
-    "1/4 Cup Dijon Mustard",
-    "2 Garlic Cloves (1/4 tsp Garlic Powder)",
-    "1 tbsp Olive Oil",
-    "3/2 tsp Rosemary",
-    "3/2 tsp Thyme",
-    "1/2 tsp Salt",
-    "1/4 tsp Pepper",
-    "Chicken Thighs (amount not specified)",
-  ],
-  steps: [
-    "Preheat Oven to 350F.",
-    "Place thighs in baking dish and pat dry.",
-    "Mix sauce ingredients well, should be a syrupy consistency.",
-    "Baste chicken liberally, pour the rest in the dish.",
-    "Bake for 45-60 minutes.",
-    "Check temperature periodically and take out when internal temp reaches 165F.",
-  ],
-};
-
-export const braisedShortRibs: fatRecipe = {
-  title: "Braised Short Ribs",
-  description: "Umami to the Max.",
-  img: "https://images.unsplash.com/photo-1625604086988-6e41981275fa?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  ingredients: [
-    "5lbs of Short Ribs, cut into 20 pieces",
-    "1 Cup Soy Sauce",
-    "1/4 Cup Rice Wine Vinegar",
-    "3 Cloves Garlic (3/8 tsp Garlic Powder)",
-    "1/4 Cup Chopped Cilantro",
-    "1 tbsp Minced Ginger",
-    "1/2 Cup Brown Sugar",
-    "1/2 Cup Chopped Scallions (Keep Bottoms)",
-    "3/4 tsp Red Pepper Flakes",
-    "1/4 Cup Orange Juice",
-    "1/4 Cup Teriyaki Sauce",
-    "2 tbsp Lime Juice",
-    "2 tbsp Lemon Juice",
-  ],
-  steps: [
-    "Preheat Oven to 350F.",
-    "Combine ribs, soy sauce, vinegar, garlic, ginger, brown sugar, green onion bottoms, red pepper flakes, cilantro, lime juice and 2 tbsp of orange juice in a large stockpot.",
-    "Add 4+ cups of water to the mix. Keep adding until the ribs are submerged.",
-    "Bake covered for 3 hours.",
-    "Increase Oven to 425F.",
-    "Add Teriyaki Sauce, Lemon Juice, and the remaining Orange Juice.",
-    "Put back into oven and bake for 10 minutes until the ribs are properly glazed.",
-    "Garnish with remaining chopped green onions if desired.",
-  ],
-};
-
-export type proteinRecipe = {
-  title: string;
-  description: string;
-  img: string;
-  ingredients: string[];
-  steps: string[];
-};
-
-export const pankoTilapia: proteinRecipe = {
-  title: "Panko Tilapia",
-  description: "Great for Fish Tacos!",
-  img: "https://images.unsplash.com/photo-1583815950467-e7b26a5b56b3?q=80&w=2667&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  ingredients: [
-    "2 lbs Tilapia Fillet (Cod works too)",
-    "3 Cups Panko Breadcrumbs",
-    "2 tbsp Olive Oil",
-    "2 Eggs",
-    "1 tbsp Streumi",
-    "1 tsp Salt",
-    "1/2 tsp Pepper",
-  ],
-  steps: [
-    "Toss Panko, Streumi, Salt & Pepper in a bowl.",
-    "Beat eggs in separate bowl until yolk & egg whites are properly combined.",
-    "Heat up skillet & coat with olive oil.",
-    "Dip tilapia in egg mix and coat in breadcrumb mix, let simmer in pan.",
-    "Sear until sides are golden brown.",
-  ],
-};
-
-export const skirtSteak: proteinRecipe = {
-  title: "Skirt Steak",
-  description: "Panasian Style.",
-  img: "https://images.unsplash.com/photo-1619719015339-133a130520f6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  ingredients: [
-    "2lbs Skirt Steak",
-    "1/2 Cup Olive Oil",
-    "1/3 Cup Soy Sauce",
-    "4 Scallions, halved",
-    "2 cloves garlic (1/4 tsp Garlic Powder)",
-    "1/4 Cup Lime Juice",
-    "1/2 tsp red pepper flakes",
-    "1/2 tsp ground cumin",
-    "3 tbsp brown sugar",
-  ],
-  steps: [
-    "Blend oil, soy sauce, scallions, garlic, lime juice, red pepper, cumin, and sugar.",
-    "Pour marinade into plastic bag with steak. Marinate for 1 hour in fridge.",
-    "Pat steak dry. Line pan with olive oil and sear each side.",
-    "Remove steak when internal temperature hits 130F.",
-    "Transfer to cutting board and slice across the grain.",
-  ],
-};
-
-export const thaiCurryMussels: proteinRecipe = {
-  title: "Thai Curry Mussels",
-  description: "Tiny Protein Bombs.",
-  img: "https://images.unsplash.com/photo-1515681778128-ed5f11c50b77?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  ingredients: [
-    "2.5 lbs Mussels",
-    "2 tbsp Peanut Oil",
-    "1 stalk of Crushed Lemongrass (or Paste)",
-    "3 tbsp Thai Red Curry Paste",
-    "1/2 Cup White Wine",
-    "1 can of Coconut Milk",
-    "2 tbsp Fish Sauce",
-    "2 tbsp Lime Juice",
-    "2 tbsp Chopped Cilantro",
-    "4 tbsp Basil",
-  ],
-  steps: [
-    "Add lemongrass, curry paste, wine, coconut milk, fish sauce, and lime juice to a large stockpot.",
-    "Pour in Mussels and cover.",
-    "Cook for 10 minutes, add cilantro and basil in last minute of cooking.",
-    "Let sit for 5 minutes and serve.",
-  ],
-};
-
-export type HomeItem = {
-  id: number;
-  title: string;
-  type: string;
-  text: string;
-  author: string;
-  authorAvatar: string;
-  image: string;
-};
-
-export const homeItems: HomeItem[] = [
   {
-    id: 1,
-    title: 'Exploring Maui',
-    type: 'Blog',
-    text: 'We just got back from a trip to Maui, and we had a great time...',
-    author: 'Max Lynch',
-    authorAvatar: '/img/max.jpg',
-    image: '/img/c1.avif',
+    title: "Chicken Shallots",
+    description: "Creamy and Wine-ey?",
+    img: "https://images.unsplash.com/photo-1577194509876-4bb24787a641?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ingredients: [
+      "8 Chicken Thighs",
+      "2 tbsp flour",
+      "2 tbsp butter",
+      "12 peeled shallots",
+      "2 cups white wine",
+      "2 tbsp dijon mustard",
+      "2 tsp thyme",
+      "2 Cups halved cherry/grape tomatoes",
+      "Salt/Pepper",
+    ],
+    steps: [
+      "Pat chicken thighs dry.",
+      "Sprinkle with flour, salt, pepper.",
+      "Melt butter in a large skillet. Medium-high heat.",
+      "Cook chicken until browned. Remove from skillet.",
+      "Add shallots, saute in the chicken fat. 10 minutes.",
+      "Add wine, mustard, thyme, tomatoes, and chicken thighs. Set to a low simmer for 30 minutes.",
+      "Remove heat and lid, allow sauce to thicken for 15 minutes.",
+    ],
   },
   {
-    id: 2,
-    title: 'Arctic Adventures',
-    type: 'Blog',
-    text: 'Last month we took a trek to the Arctic Circle. The isolation was just what we needed after...',
-    author: 'Nathan Chapman',
-    authorAvatar: '/img/nathan.jpg',
-    image: '/img/c2.avif',
+    title: "Honey Mustard Chicken Thighs",
+    description: "Tangy Sweet Perfection.",
+    img: "./honeymustardchicken.jpg",
+    ingredients: [
+      "1/4 Cup Honey",
+      "1/4 Cup Dijon Mustard",
+      "2 Garlic Cloves (1/4 tsp Garlic Powder)",
+      "1 tbsp Olive Oil",
+      "3/2 tsp Rosemary",
+      "3/2 tsp Thyme",
+      "1/2 tsp Salt",
+      "1/4 tsp Pepper",
+      "Chicken Thighs (amount not specified)",
+    ],
+    steps: [
+      "Preheat Oven to 350F.",
+      "Place thighs in baking dish and pat dry.",
+      "Mix sauce ingredients well, should be a syrupy consistency.",
+      "Baste chicken liberally, pour the rest in the dish.",
+      "Bake for 45-60 minutes.",
+      "Check temperature periodically and take out when internal temp reaches 165F.",
+    ],
   },
   {
-    id: 3,
-    title: 'Frolicking in the Faroe Islands',
-    type: 'Blog',
-    text: 'The Faroe Islands are a North Atlantic archipelago located 320 kilometres (200 mi) north-northwest of Scotland...',
-    author: 'Leo Giovanetti',
-    authorAvatar: '/img/leo.jpg',
-    image: '/img/c3.avif',
+    title: "Braised Short Ribs",
+    description: "Umami to the Max.",
+    img: "https://images.unsplash.com/photo-1625604086988-6e41981275fa?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ingredients: [
+      "5lbs of Short Ribs, cut into 20 pieces",
+      "1 Cup Soy Sauce",
+      "1/4 Cup Rice Wine Vinegar",
+      "3 Cloves Garlic (3/8 tsp Garlic Powder)",
+      "1/4 Cup Chopped Cilantro",
+      "1 tbsp Minced Ginger",
+      "1/2 Cup Brown Sugar",
+      "1/2 Cup Chopped Scallions (Keep Bottoms)",
+      "3/4 tsp Red Pepper Flakes",
+      "1/4 Cup Orange Juice",
+      "1/4 Cup Teriyaki Sauce",
+      "2 tbsp Lime Juice",
+      "2 tbsp Lemon Juice",
+    ],
+    steps: [
+      "Preheat Oven to 350F.",
+      "Combine ribs, soy sauce, vinegar, garlic, ginger, brown sugar, green onion bottoms, red pepper flakes, cilantro, lime juice and 2 tbsp of orange juice in a large stockpot.",
+      "Add 4+ cups of water to the mix. Keep adding until the ribs are submerged.",
+      "Bake covered for 3 hours.",
+      "Increase Oven to 425F.",
+      "Add Teriyaki Sauce, Lemon Juice, and the remaining Orange Juice.",
+      "Put back into oven and bake for 10 minutes until the ribs are properly glazed.",
+      "Garnish with remaining chopped green onions if desired.",
+    ],
   },
+  {
+    title: "Panko Tilapia",
+    description: "Great for Fish Tacos!",
+    img: "https://images.unsplash.com/photo-1583815950467-e7b26a5b56b3?q=80&w=2667&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ingredients: [
+      "2 lbs Tilapia Fillet (Cod works too)",
+      "3 Cups Panko Breadcrumbs",
+      "2 tbsp Olive Oil",
+      "2 Eggs",
+      "1 tbsp Streumi",
+      "1 tsp Salt",
+      "1/2 tsp Pepper",
+    ],
+    steps: [
+      "Toss Panko, Streumi, Salt & Pepper in a bowl.",
+      "Beat eggs in separate bowl until yolk & egg whites are properly combined.",
+      "Heat up skillet & coat with olive oil.",
+      "Dip tilapia in egg mix and coat in breadcrumb mix, let simmer in pan.",
+      "Sear until sides are golden brown.",
+    ],
+  },
+  {
+    title: "Skirt Steak",
+    description: "Panasian Style.",
+    img: "https://images.unsplash.com/photo-1619719015339-133a130520f6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ingredients: [
+      "2lbs Skirt Steak",
+      "1/2 Cup Olive Oil",
+      "1/3 Cup Soy Sauce",
+      "4 Scallions, halved",
+      "2 cloves garlic (1/4 tsp Garlic Powder)",
+      "1/4 Cup Lime Juice",
+      "1/2 tsp red pepper flakes",
+      "1/2 tsp ground cumin",
+      "3 tbsp brown sugar",
+    ],
+    steps: [
+      "Blend oil, soy sauce, scallions, garlic, lime juice, red pepper, cumin, and sugar.",
+      "Pour marinade into plastic bag with steak. Marinate for 1 hour in fridge.",
+      "Pat steak dry. Line pan with olive oil and sear each side.",
+      "Remove steak when internal temperature hits 130F.",
+      "Transfer to cutting board and slice across the grain.",
+    ],
+  },
+  {
+    title: "Thai Curry Mussels",
+    description: "Tiny Protein Bombs.",
+    img: "https://images.unsplash.com/photo-1515681778128-ed5f11c50b77?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ingredients: [
+      "2.5 lbs Mussels",
+      "2 tbsp Peanut Oil",
+      "1 stalk of Crushed Lemongrass (or Paste)",
+      "3 tbsp Thai Red Curry Paste",
+      "1/2 Cup White Wine",
+      "1 can of Coconut Milk",
+      "2 tbsp Fish Sauce",
+      "2 tbsp Lime Juice",
+      "2 tbsp Chopped Cilantro",
+      "4 tbsp Basil",
+    ],
+    steps: [
+      "Add lemongrass, curry paste, wine, coconut milk, fish sauce, and lime juice to a large stockpot.",
+      "Pour in Mussels and cover.",
+      "Cook for 10 minutes, add cilantro and basil in last minute of cooking.",
+      "Let sit for 5 minutes and serve.",
+    ],
+  }
 ];
 
 export type NotificationItem = {

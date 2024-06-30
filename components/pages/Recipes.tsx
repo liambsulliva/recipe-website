@@ -15,10 +15,10 @@ import {
 import Notifications from './Notifications';
 import { useState } from 'react';
 import { notificationsOutline } from 'ionicons/icons';
-import { selectCarbs } from '../../store/selectors';
+import { selectRecipes } from '../../store/selectors';
 import Store from '../../store';
 
-type FeedCardProps = {
+type RecipeCardProps = {
   title: string;
   description: string;
   img: string;
@@ -26,15 +26,15 @@ type FeedCardProps = {
   steps: Array<string>;
 };
 
-const FeedCard = ({
+const RecipeCard = ({
   title,
   description,
   img,
   ingredients,
   steps,
-}: FeedCardProps) => (
-  <Card className="my-4 mx-auto">
-    <div className="h-32 w-full relative">
+}: RecipeCardProps) => (
+  <Card className="m-4 flex-grow">
+    <div className="h-56 w-full relative">
       <Image
         className="rounded-t-xl object-cover min-w-full min-h-full max-w-full max-h-full"
         src={img}
@@ -53,15 +53,15 @@ const FeedCard = ({
   </Card>
 );
 
-const Feed = () => {
-  const carbRecipes = Store.useState(selectCarbs);
+const Recipe = () => {
+  const recipes = Store.useState(selectRecipes);
   const [showNotifications, setShowNotifications] = useState(false);
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Feed</IonTitle>
+          <IonTitle>Recipes</IonTitle>
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
@@ -75,19 +75,21 @@ const Feed = () => {
       <IonContent className="ion-padding" fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Feed</IonTitle>
+            <IonTitle size="large">Recipes</IonTitle>
           </IonToolbar>
         </IonHeader>
         <Notifications
           open={showNotifications}
           onDidDismiss={() => setShowNotifications(false)}
         />
-        {carbRecipes.map((i, index) => (
-          <FeedCard {...i} key={index} />
-        ))}
+        <div className='flex flex-wrap justify-between'>
+          {recipes.map((i, index) => (
+            <RecipeCard {...i} key={index} />
+          ))}
+        </div>
       </IonContent>
     </IonPage>
   );
 };
 
-export default Feed;
+export default Recipe;

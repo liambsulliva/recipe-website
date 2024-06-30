@@ -1,6 +1,6 @@
 import { Store as PullStateStore } from 'pullstate';
 
-import { lists, carbRecipes, notifications, settings, TodoListItem, carbRecipe, NotificationItem, Settings } from '../mock';
+import { lists, recipes, notifications, settings, TodoListItem, recipe, NotificationItem, Settings } from '../mock';
 
 type StoreProps = {
   safeAreaTop: number;
@@ -8,7 +8,7 @@ type StoreProps = {
   menuOpen: boolean;
   notificationsOpen: boolean;
   currentPage: number | null;
-  carbRecipes: carbRecipe[];
+  recipes: recipe[];
   lists: TodoListItem[];
   notifications: NotificationItem[];
   settings: Settings;
@@ -21,7 +21,7 @@ const Store = new PullStateStore<StoreProps>({
   menuOpen: false,
   notificationsOpen: false,
   currentPage: null,
-  carbRecipes,
+  recipes,
   lists,
   notifications,
   settings,

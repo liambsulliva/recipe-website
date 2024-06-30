@@ -3,7 +3,7 @@
   "appName": "nextjs-tailwind-capacitor",
   "bundledWebRuntime": false,
   "npmClient": "npm",
-  "webDir": "out",
+  "webDir": "dist",
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 0

@@ -12,6 +12,7 @@ module.exports = {
     unoptimized: true,
   },
   output: 'export',
+  distDir: 'dist',
   swcMinify: true,
   transpilePackages: [
     '@ionic/react',

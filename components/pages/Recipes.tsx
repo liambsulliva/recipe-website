@@ -59,7 +59,7 @@ const Recipe = () => {
 
   return (
     <IonPage>
-      <IonHeader>
+      <IonHeader className="ion-no-border">
         <IonToolbar>
           <IonTitle>Recipes</IonTitle>
           <IonButtons slot="start">

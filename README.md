@@ -1,59 +1,64 @@
-## 👋 Introduction
+# Next.js + Tailwind CSS + Ionic Framework + Capacitor Mobile Starter
 
-Welcome to the new and revamped recipe website project! This was one of the first basic HTML sites I made while I was learning the basics, and thought it deserved a bit of a front-end facelift. Hope you enjoy!
+![Screenshot](./screenshot.png)
 
-## 💻 Demo
+This repo is a conceptual starting point for building an iOS, Android, and Progressive Web App with Next.js, Tailwind CSS, [Ionic Framework](https://ionicframework.com/), and [Capacitor](https://capacitorjs.com/).
 
-Check out the [Demo](https://recipes.liambsullivan.com), hosted on Vercel.
+Next.js handles the production React app experience, Tailwind can be used to style each page of your app, Ionic Framework provides the cross-platform system controls (navigation/transitions/tabs/etc.), and then Capacitor bundles all of it up and runs it on iOS, Android, and Web with full native access.
 
-## 💪 Features:
-    
-- ✅ Minimal styling
-- ✅ Mobile responsive
-- ✅ Dark mode
-- ✅ Static Page Generation
+See this blog post for an overview of the stack and how it all works: <https://dev.to/ionic/build-mobile-apps-with-tailwind-css-next-js-ionic-framework-and-capacitor-3kij>
 
-## 🛣️ Roadmap
+## Usage
 
-- ❌ Migrate to JAMStack (NodeJS)
-- ❌ Change landing page image on dark mode button click
-- ❌ Internationalization (i18n)
-- ❌ Implement user authentication
-- ❌ Add search functionality
-- ❌ Create a favorites feature
-- ❌ Add social media icons to footer
-- ❌ Improve performance and optimize loading times
-- ❌ Add "See All"/Infinite Scroll
-- ❌ Improve accessibility and ensure WCAG compliance
-- ❌ Add a print-friendly version of recipes
+This project is a standard Next.js app, so the typical Next.js development process applies (`npm run dev` for browser-based development). However, there is one caveat: the app must be exported to deploy to iOS and Android, since it must run purely client-side. ([more on Next.js export](https://nextjs.org/docs/advanced-features/static-html-export))
 
-## ⚙️ Stack
+To build the app, run:
 
-- [**ASTRO** + **Typescript**](https://astro.build/) - An all-in-one web framework designed for speed, especially for static websites with "islands" of interactivity.
-- [**Tailwind CSS**](https://tailwindcss.com/) - A utility-first CSS framework for including CSS in HTML classes.
-- [**React**](https://react.dev) - A JavaScript library for building user interfaces.
-- [**Iconify**](https://iconify.design) - A Library of SVG Icons.
+```bash
+npm run build
+```
 
-## 📄 Adding a recipe
+All the client side files will be sent to the `./out/` directory. These files need to be copied to the native iOS and Android projects, and this is where Capacitor comes in:
 
-Adding a post is as simple as adding a .md or .mdx file to the blog folder at the path **src/content/...**. The filename will be used to create the slug/URL of the page.
+```bash
+npm run sync
+```
 
-## Required properties:
+Finally, use the following run commands to run the app on each platform:
 
-- Layout
-- Title
-- Description
-- Image (Post Banner)
+```bash
+npm run ios
+npm run android
+```
 
-These properties must be included in the frontmatter of the `.md` file. If not, unexpected behavior may occur.
+## Livereload/Instant Refresh
 
-## 🧞 Commands
+To enable Livereload and Instant Refresh during development (when running `npm run dev`), find the IP address of your local interface (ex: `192.168.1.2`) and port your Next.js server is running on, and then set the server url config value to point to it in `capacitor.config.json`:
 
-All commands are run from the root of the project, from a terminal:
+```json
+{
+  "server": {
+    "url": "http://192.168.1.2:3000"
+  }
+}
+```
 
-- `astro dev`: Starts the development server and watches for changes.
-- `astro build`: Builds the project for production.
-- `astro preview`: Previews the production build locally.
-- `astro deploy`: Deploys the project to a hosting provider.
+Note: this configuration wil be easier in Capacitor 3 which [recently went into beta](https://capacitorjs.com/blog/announcing-capacitor-3-0-beta).
 
-Make sure to install the Astro CLI by running `npm install astro`.
+## API Routes
+
+API Routes can be used but some minimal configuration is required. See [this discussion](https://github.com/mlynch/nextjs-tailwind-ionic-capacitor-starter/issues/4#issuecomment-754030049) for more information.
+
+## Caveats
+
+One caveat with this project: Because the app must be able to run purely client-side and use [Next.js's Export command](https://nextjs.org/docs/advanced-features/static-html-export), that means no Server Side Rendering in this code base. There is likely a way to SSR and a fully static Next.js app in tandem but it requires [a Babel plugin](https://github.com/erzr/next-babel-conditional-ssg-ssr) or would involve a more elaborate monorepo setup with code sharing that is out of scope for this project.
+
+Additionally, Next.js routing is not really used much in this app beyond a catch-all route to render the native app shell and engage the Ionic React Router. This is primarily because Next.js routing is not set up to enable native-style transitions and history state management like the kind Ionic uses.
+
+## What is Capacitor?
+
+You can think of [Capacitor](https://capacitorjs.com/) as a sort of "electron for mobile" that runs standard web apps on iOS, Android, Desktop, and Web.
+
+Capacitor provides access to Native APIs and a plugin system for building any native functionality your app needs.
+
+Capacitor apps can also run in the browser as a Progressive Web App with the same code.

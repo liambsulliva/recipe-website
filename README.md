@@ -29,8 +29,8 @@ Check out the [Demo](https://recipes.liambsullivan.com), hosted on Vercel.
 
 ## ⚙️ Stack
 
-- [**ASTRO** + **Typescript**](https://astro.build/) - Astro is the all-in-one web framework designed for speed.
-- [**Tailwind CSS**](https://tailwindcss.com/) - Tailwind CSS is a utility-first CSS framework.
+- [**ASTRO** + **Typescript**](https://astro.build/) - An all-in-one web framework designed for speed, especially for static websites with "islands" of interactivity.
+- [**Tailwind CSS**](https://tailwindcss.com/) - A utility-first CSS framework for including CSS in HTML classes.
 - [**React**](https://react.dev) - A JavaScript library for building user interfaces.
 - [**Iconify**](https://iconify.design) - A Library of SVG Icons.
 

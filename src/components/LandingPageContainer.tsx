@@ -8,7 +8,17 @@ const LandingPageContainer: React.FC<{ carbs: any[], fats: any[], proteins: any[
     useEffect(() => {
         const isDarkModeEnabled = localStorage.getItem('darkMode') === 'true';
         setDarkModeEnabled(isDarkModeEnabled);
-    }, [currentIndex]);
+
+        const handleDarkModeChange = (event: CustomEvent) => {
+            setDarkModeEnabled(event.detail);
+        };
+
+        window.addEventListener('darkModeChanged', handleDarkModeChange as EventListener);
+
+        return () => {
+            window.removeEventListener('darkModeChanged', handleDarkModeChange as EventListener);
+        };
+    }, []);
 
     const images = [
         {

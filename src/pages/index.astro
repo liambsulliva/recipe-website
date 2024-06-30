@@ -28,4 +28,13 @@ const proteins = (await getCollection("proteins")).sort(
 		<Header />
 		<LandingPageContainer {carbs} {fats} {proteins} client:load />
 	</body>
+	<script>
+        // This script will run on the client side
+        document.addEventListener('DOMContentLoaded', () => {
+            const isDarkMode = localStorage.getItem('darkMode') === 'true';
+            if (isDarkMode) {
+                document.documentElement.classList.add('dark');
+            }
+        });
+    </script>
 </html>

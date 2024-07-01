@@ -95,7 +95,7 @@ const Recipe = () => {
               </IonButtons>
             <IonButtons slot="end">
             <IonButton onClick={() => setShowNotifications(true)}>
-                <IonIcon slot="icon-only" icon={search}></IonIcon>
+                <IonIcon className='text-black dark:text-white' slot="icon-only" icon={search}></IonIcon>
             </IonButton>
           </IonButtons>
         </IonToolbar>
@@ -111,11 +111,6 @@ const Recipe = () => {
         <div className='flex'>
           <div className='flex flex-col lg:w-1/2'>
             <p className='md:text-7xl text-6xl font-bold md:p-8 md:pb-4 px-6 pb-3'>Explore</p>
-            <div className="flex flex-row gap-6 max-[430px]:gap-2 max-[430px]:mx-4 mx-10">
-                <Button label='Carbs' onClick={() => setCurrentIndex(0)} />
-                <Button label='Fats' onClick={() => setCurrentIndex(2)} />
-                <Button label='Proteins' onClick={() => setCurrentIndex(4)} />
-            </div>
             <IonGrid>
               <IonRow>
                 {recipes.map((i, index) => (

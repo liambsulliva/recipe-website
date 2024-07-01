@@ -14,7 +14,7 @@ import {
 } from '@ionic/react';
 import Notifications from './Notifications';
 import { useState } from 'react';
-import { notificationsOutline } from 'ionicons/icons';
+import { moonOutline } from 'ionicons/icons';
 import { selectRecipes } from '../../store/selectors';
 import Store from '../../store';
 
@@ -67,7 +67,7 @@ const Recipe = () => {
           </IonButtons>
           <IonButtons slot="end">
             <IonButton onClick={() => setShowNotifications(true)}>
-              <IonIcon icon={notificationsOutline} />
+              <IonIcon icon={moonOutline} />
             </IonButton>
           </IonButtons>
         </IonToolbar>

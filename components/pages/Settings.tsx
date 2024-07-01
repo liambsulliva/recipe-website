@@ -17,7 +17,7 @@ const Settings = () => {
   const settings = Store.useState(selectors.selectSettings);
   return (
     <IonPage>
-      <IonHeader>
+      <IonHeader className="ion-no-border">
         <IonToolbar>
           <IonTitle>Settings</IonTitle>
         </IonToolbar>

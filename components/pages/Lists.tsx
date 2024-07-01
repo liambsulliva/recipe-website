@@ -35,13 +35,13 @@ const AllLists = () => {
 const Lists = () => {
   return (
     <IonPage>
-      <IonHeader translucent={true}>
+      <IonHeader>
         <IonToolbar>
           <IonTitle>Lists</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen={true}>
-        <IonHeader collapse="condense">
+        <IonHeader collapse="condense" className="ion-no-border">
           <IonToolbar>
             <IonTitle size="large">Lists</IonTitle>
           </IonToolbar>

@@ -105,18 +105,14 @@ const Recipe = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding" fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar className='p-2'>
-            <IonTitle size="large">Explore</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        <IonHeader collapse="condense" />
         <Notifications
           open={showNotifications}
           onDidDismiss={() => setShowNotifications(false)}
         />
         <div className='flex'>
           <div className='flex flex-col lg:w-1/2'>
-            <p className='max-md:hidden text-8xl font-bold p-10 pb-4'>Explore</p>
+            <p className='md:text-7xl text-6xl font-bold md:p-8 md:pb-4 px-6 pb-2'>Explore</p>
             <div className="flex flex-row gap-6 max-[430px]:gap-2 max-[430px]:mx-4 mx-10">
                 <Button label='Carbs' onClick={() => setCurrentIndex(0)} />
                 <Button label='Fats' onClick={() => setCurrentIndex(2)} />

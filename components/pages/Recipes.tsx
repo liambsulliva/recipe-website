@@ -129,7 +129,7 @@ const Recipe = () => {
             </IonGrid>
           </div>
           <div className="w-1/2 max-lg:hidden">
-              <img src={images[currentIndex].src} alt={images[currentIndex].alt} className="h-full object-cover"/>
+              <Image src={images[currentIndex].src} alt={images[currentIndex].alt} className="h-full object-cover"/>
           </div>
         </div>
         

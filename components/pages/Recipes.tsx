@@ -105,7 +105,9 @@ const Recipe = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding" fullscreen>
-        <IonHeader collapse="condense" />
+        <IonHeader collapse="condense">
+            <IonToolbar className='p-2' />
+        </IonHeader>
         <Notifications
           open={showNotifications}
           onDidDismiss={() => setShowNotifications(false)}
@@ -129,7 +131,7 @@ const Recipe = () => {
             </IonGrid>
           </div>
           <div className="w-1/2 max-lg:hidden">
-              <Image src={images[currentIndex].src} alt={images[currentIndex].alt} className="h-full object-cover"/>
+              <img src={images[currentIndex].src} alt={images[currentIndex].alt} className="h-full object-cover"/>
           </div>
         </div>
         

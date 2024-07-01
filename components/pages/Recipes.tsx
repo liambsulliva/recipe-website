@@ -93,7 +93,7 @@ const Recipe = () => {
     <IonPage>
       <IonHeader className="ion-no-border">
         <IonToolbar>
-          <IonTitle className='text-left px-4 font-bold text-black'>Explore</IonTitle>
+          <IonTitle className='text-left px-4 font-bold text-black'>Recipes</IonTitle>
           <IonButtons slot="start">
             <IonMenuButton />
               </IonButtons>
@@ -116,6 +116,7 @@ const Recipe = () => {
         />
         <div className='flex'>
           <div className='flex flex-col lg:w-1/2'>
+            <p className='max-md:hidden text-8xl font-bold p-10 pb-4'>Explore</p>
             <div className="flex flex-row gap-6 max-[430px]:gap-2 max-[430px]:mx-4 mx-10">
                 <Button label='Carbs' onClick={() => setCurrentIndex(0)} />
                 <Button label='Fats' onClick={() => setCurrentIndex(2)} />

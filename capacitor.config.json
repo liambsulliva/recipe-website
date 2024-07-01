@@ -1,6 +1,6 @@
 {
   "appId": "com.liambsullivan.recipes",
-  "appName": "nextjs-tailwind-capacitor",
+  "appName": "Quinoa",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "dist",

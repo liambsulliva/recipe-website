@@ -26,8 +26,6 @@ type RecipeCardProps = {
   title: string;
   description: string;
   img: string;
-  ingredients: Array<string>;
-  steps: Array<string>;
 };
 
 const images = [
@@ -61,8 +59,6 @@ const RecipeCard = ({
   title,
   description,
   img,
-  ingredients,
-  steps,
 }: RecipeCardProps) => (
   <Card className="m-4 flex-grow">
     <div className="h-56 w-full relative">
@@ -73,7 +69,7 @@ const RecipeCard = ({
         fill
       />
     </div>
-    <div className="px-4 py-4 bg-white rounded-b-xl dark:bg-gray-900">
+    <div className="px-4 py-4 bg-white rounded-b-xl dark:bg-stone-950">
       <h2 className="font-bold text-2xl text-gray-800 dark:text-gray-100">
         {title}
       </h2>
@@ -91,9 +87,9 @@ const Recipe = () => {
 
   return (
     <IonPage>
-      <IonHeader className="ion-no-border">
+      <IonHeader translucent className="ion-no-border">
         <IonToolbar>
-          <IonTitle className='text-left px-4 font-bold text-black'>Recipes</IonTitle>
+          <IonTitle className='text-left px-4 font-bold text-black dark:text-white'>Recipes</IonTitle>
           <IonButtons slot="start">
             <IonMenuButton />
               </IonButtons>
@@ -114,7 +110,7 @@ const Recipe = () => {
         />
         <div className='flex'>
           <div className='flex flex-col lg:w-1/2'>
-            <p className='md:text-7xl text-6xl font-bold md:p-8 md:pb-4 px-6 pb-2'>Explore</p>
+            <p className='md:text-7xl text-6xl font-bold md:p-8 md:pb-4 px-6 pb-3'>Explore</p>
             <div className="flex flex-row gap-6 max-[430px]:gap-2 max-[430px]:mx-4 mx-10">
                 <Button label='Carbs' onClick={() => setCurrentIndex(0)} />
                 <Button label='Fats' onClick={() => setCurrentIndex(2)} />

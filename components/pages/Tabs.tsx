@@ -28,7 +28,7 @@ const Tabs = () => {
         <Route path="/settings" render={() => <Settings />} exact={true} />
         <Route path="" render={() => <Redirect to="/recipes" />} exact={true} />
       </IonRouterOutlet>
-      <IonTabBar slot="bottom">
+      <IonTabBar translucent slot="bottom">
         <IonTabButton tab="tab1" href="/recipes">
           <IonIcon icon={earthOutline} />
           <IonLabel>Explore</IonLabel>

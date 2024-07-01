@@ -7,7 +7,7 @@ import {
   IonIcon,
   IonLabel,
 } from '@ionic/react';
-import { cog, pizza, list } from 'ionicons/icons';
+import { cog, earthOutline, cartOutline } from 'ionicons/icons';
 
 import Home from './Recipes';
 import Lists from './Lists';
@@ -30,12 +30,12 @@ const Tabs = () => {
       </IonRouterOutlet>
       <IonTabBar slot="bottom">
         <IonTabButton tab="tab1" href="/recipes">
-          <IonIcon icon={pizza} />
-          <IonLabel>Recipes</IonLabel>
+          <IonIcon icon={earthOutline} />
+          <IonLabel>Explore</IonLabel>
         </IonTabButton>
         <IonTabButton tab="tab2" href="/lists">
-          <IonIcon icon={list} />
-          <IonLabel>Lists</IonLabel>
+          <IonIcon icon={cartOutline} />
+          <IonLabel>Shop</IonLabel>
         </IonTabButton>
         <IonTabButton tab="tab3" href="/settings">
           <IonIcon icon={cog} />

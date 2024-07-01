@@ -22,7 +22,7 @@ import '../styles/global.css';
 import '../styles/variables.css';
 
 export const metadata: Metadata = {
-  title: 'Recipes',
+  title: 'Quinoa',
   description: 'Designed and Developed by Liam Sullivan',
 };
 

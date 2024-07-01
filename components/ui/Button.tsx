@@ -9,7 +9,7 @@ const Button: React.FC<ButtonProps> = ({ label, onClick }) => {
     return (
         <button
             onClick={onClick}
-            className="text-xl font-light px-4 py-2 hover:bg-gray-200 dark:hover:bg-[#232323] rounded-md transition duration-100 ease-in-out"
+            className="text-xl text-black font-[350] px-4 py-2 hover:bg-gray-200 dark:hover:bg-[#232323] rounded-md transition duration-100 ease-in-out"
         >
             {label}
         </button>

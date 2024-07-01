@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Card from '../ui/Card';
+import Button from '../ui/Button';
 
 import {
   IonPage,
@@ -10,11 +11,14 @@ import {
   IonButton,
   IonIcon,
   IonContent,
+  IonGrid,
+  IonCol,
+  IonRow,
   IonMenuButton,
 } from '@ionic/react';
 import Notifications from './Notifications';
 import { useState } from 'react';
-import { moonOutline } from 'ionicons/icons';
+import { search } from 'ionicons/icons';
 import { selectRecipes } from '../../store/selectors';
 import Store from '../../store';
 
@@ -25,6 +29,33 @@ type RecipeCardProps = {
   ingredients: Array<string>;
   steps: Array<string>;
 };
+
+const images = [
+  {
+      src: "/bananas.jpg",
+      alt: "bananas",
+  },
+  {
+      src: "/bananas-dark.jpeg",
+      alt: "bananas-dark",
+  },
+  {
+      src: "/avocados.jpg",
+      alt: "avocados",
+  },
+  {
+      src: "/avocados-dark.jpeg",
+      alt: "avocados-dark",
+  },
+  {
+      src: "/eggs.jpg",
+      alt: "eggs",
+  },
+  {
+      src: "/eggs-dark.jpeg",
+      alt: "eggs-dark",
+  }
+];
 
 const RecipeCard = ({
   title,
@@ -56,37 +87,55 @@ const RecipeCard = ({
 const Recipe = () => {
   const recipes = Store.useState(selectRecipes);
   const [showNotifications, setShowNotifications] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
     <IonPage>
       <IonHeader className="ion-no-border">
         <IonToolbar>
-          <IonTitle>Recipes</IonTitle>
+          <IonTitle className='text-left px-4 font-bold text-black'>Explore</IonTitle>
           <IonButtons slot="start">
             <IonMenuButton />
-          </IonButtons>
-          <IonButtons slot="end">
+              </IonButtons>
+            <IonButtons slot="end">
             <IonButton onClick={() => setShowNotifications(true)}>
-              <IonIcon icon={moonOutline} />
+                <IonIcon slot="icon-only" icon={search}></IonIcon>
             </IonButton>
           </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding" fullscreen>
         <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Recipes</IonTitle>
+          <IonToolbar className='p-2'>
+            <IonTitle size="large">Explore</IonTitle>
           </IonToolbar>
         </IonHeader>
         <Notifications
           open={showNotifications}
           onDidDismiss={() => setShowNotifications(false)}
         />
-        <div className='flex flex-wrap justify-between'>
-          {recipes.map((i, index) => (
-            <RecipeCard {...i} key={index} />
-          ))}
+        <div className='flex'>
+          <div className='flex flex-col lg:w-1/2'>
+            <div className="flex flex-row gap-6 max-[430px]:gap-2 max-[430px]:mx-4 mx-10">
+                <Button label='Carbs' onClick={() => setCurrentIndex(0)} />
+                <Button label='Fats' onClick={() => setCurrentIndex(2)} />
+                <Button label='Proteins' onClick={() => setCurrentIndex(4)} />
+            </div>
+            <IonGrid>
+              <IonRow>
+                {recipes.map((i, index) => (
+                  <IonCol size="12" sizeMd="6" key={index}>
+                    <RecipeCard {...i} />
+                  </IonCol>
+                ))}
+              </IonRow>
+            </IonGrid>
+          </div>
+          <div className="w-1/2 max-lg:hidden">
+              <img src={images[currentIndex].src} alt={images[currentIndex].alt} className="h-full object-cover"/>
+          </div>
         </div>
+        
       </IonContent>
     </IonPage>
   );

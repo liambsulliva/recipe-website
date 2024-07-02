@@ -1,4 +1,4 @@
-interface post {
+export interface post {
     title: string;
     description: string;
     img: string;
@@ -6,7 +6,7 @@ interface post {
     steps: Array<string>;
 }
 
-const allPosts = [
+export const allPosts = [
     [
       {
         title: "Beef Noodle Skillet",

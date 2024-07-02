@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Modal, StyleSheet, ScrollView, SafeAreaView, Image } from 'react-native';
 import { BlurView } from 'expo-blur';
-import '@/constants/Recipes';
+import { allPosts, post } from '@/constants/Recipes';
 
 const Button = ({ label, onPress }: { label: string, onPress: () => void }) => (
   <TouchableOpacity 
     className="m-1 px-4 py-2 bg-yellow-500 dark:bg-stone-800 rounded-md" 
     onPress={onPress}
   >
-    <Text className="text-white font-bold">{label}</Text>
+    <Text className="text-white text-center font-bold">{label}</Text>
   </TouchableOpacity>
 );
 
@@ -76,12 +76,7 @@ const renderPosts = (posts: post[]) => {
                       )}
                     </>
                   )}
-                  <TouchableOpacity 
-                    className="mt-4 bg-blue-500 p-2 rounded"
-                    onPress={() => setModalVisible(false)}
-                  >
-                    <Text className="text-white text-center">Close</Text>
-                  </TouchableOpacity>
+                  <Button label='Close' onPress={() => setModalVisible(false)} />
                 </View>
               </View>
             </ScrollView>

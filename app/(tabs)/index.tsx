@@ -5,7 +5,7 @@ import { allPosts, post } from '@/constants/Recipes';
 
 const Button = ({ label, onPress }: { label: string, onPress: () => void }) => (
   <TouchableOpacity 
-    className="m-1 px-4 py-2 bg-yellow-500 dark:bg-stone-800 rounded-md" 
+    className="m-1 px-4 py-2 bg-yellow-500 dark:bg-stone-600 rounded-md" 
     onPress={onPress}
   >
     <Text className="text-white text-center font-bold">{label}</Text>
@@ -46,7 +46,7 @@ const renderPosts = (posts: post[]) => {
           <SafeAreaView className="flex-1">
             <ScrollView className="flex-1">
               <View className="flex-1 justify-center items-center p-4">
-                <View className="bg-white dark:bg-gray-800 p-6 rounded-lg w-full max-w-md">
+                <View className="bg-white dark:bg-stone-800 p-6 rounded-lg w-full max-w-md">
                   {selectedPost && (
                     <>
                       {selectedPost.img && (

@@ -18,7 +18,7 @@ const renderPosts = (posts: any) => (
         className="p-4 pb-8"
         onPress={() => Linking.openURL(`/${post.slug}`)}
       >
-        <Text className="text-2xl font-bold">{post.title}</Text>
+        <Text className="text-2xl dark:text-stone-200 font-bold">{post.title}</Text>
         <Text className="text-gray-500">{post.description}</Text>
       </TouchableOpacity>
     </React.Fragment>
@@ -31,7 +31,7 @@ export default function TabOneScreen() {
   return (
     <View className="flex-1 flex-row justify-between">
       <View className="m-12 flex-1">
-        <Text className="text-6xl font-bold my-4">Explore</Text>
+        <Text className="text-6xl dark:text-stone-100 font-bold my-4">Explore</Text>
         <View className="flex-row mb-4">
           <Button label="Carbs" onPress={() => setCurrentIndex(0)} />
           <Button label="Fats" onPress={() => setCurrentIndex(1)} />

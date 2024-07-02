@@ -39,19 +39,19 @@ export default function TabOneScreen() {
         </View>
         <ScrollView className="flex-1">
           {currentIndex === 0 && renderPosts([
-            { title: "Beef Noodle Skillet", description: "The Protein Powerhouse." },
-            { title: "Garlic Noodles", description: "Oodles of Noodles." },
-            { title: "Mac n' Cheese", description: "Deliciously Decadent." }
+            { title: "Beef Noodle Skillet", description: "The Protein Powerhouse.", slug: "beef-noodle-skillet" },
+            { title: "Garlic Noodles", description: "Oodles of Noodles.", slug: "garlic-noodles" },
+            { title: "Mac n' Cheese", description: "Deliciously Decadent.", slug: "mac-n-cheese" }
           ])}
           {currentIndex === 1 && renderPosts([
-            { title: "Braised Short Ribs", description: "Umami to the Max." },
-            { title: "Chicken Shallots", description: "Creamy and Wine-ey?" },
-            { title: "Honey Mustard Chicken Thighs", description: "Tangy Sweet Perfection." }
+            { title: "Braised Short Ribs", description: "Umami to the Max.", slug: "braised-short-ribs" },
+            { title: "Chicken Shallots", description: "Creamy and Wine-ey?", slug: "chicken-shallots" },
+            { title: "Honey Mustard Chicken Thighs", description: "Tangy Sweet Perfection.", slug: "honey-mustard-chicken-thighs" }
           ])}
           {currentIndex === 2 && renderPosts([
-            { title: "Panko Tilapia", description: "Great for Fish Tacos!" },
-            { title: "Skirt Steak", description: "Panasian Style." },
-            { title: "Thai Curry Mussels", description: "Tiny Protein Bombs." }
+            { title: "Panko Tilapia", description: "Great for Fish Tacos!", slug: "panko-tilapia" },
+            { title: "Skirt Steak", description: "Panasian Style.", slug: "skirt-steak" },
+            { title: "Thai Curry Mussels", description: "Tiny Protein Bombs.", slug: "thai-curry-mussels" }
           ])}
         </ScrollView>
       </View>

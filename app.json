@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "quinoa",
-    "slug": "quinoa",
+    "name": "quinoa-app",
+    "slug": "quinoa-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

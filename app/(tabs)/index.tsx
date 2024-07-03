@@ -5,7 +5,7 @@ import { allPosts, post } from '@/constants/Recipes';
 
 const Button = ({ label, onPress }: { label: string, onPress: () => void }) => (
   <TouchableOpacity 
-    className="m-1 px-4 py-2 bg-yellow-500 dark:bg-stone-600 rounded-md" 
+    className="m-1 px-4 py-2 bg-yellow-500 rounded-md" 
     onPress={onPress}
   >
     <Text className="text-white text-center font-bold">{label}</Text>

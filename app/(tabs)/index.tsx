@@ -53,7 +53,7 @@ const SwipeableModalContent = ({ selectedPost, setModalVisible }: { selectedPost
         className="bg-white/80 dark:bg-stone-800/80 rounded-t-3xl max-h-[90%]"
         style={animatedStyle}
       >
-        <View className="w-12 h-1 bg-gray-300 rounded-full mx-auto my-2" />
+        <View className="w-12 h-1 bg-gray-300 rounded-full mx-auto my-3" />
         <ScrollView className="px-6 h-screen">
           {selectedPost && (
             <>
@@ -83,7 +83,7 @@ const SwipeableModalContent = ({ selectedPost, setModalVisible }: { selectedPost
                 </View>
               )}
               {selectedPost.steps && (
-                <View className="mb-4">
+                <View className="mb-8">
                   <Text className="text-lg font-semibold mb-2 text-black dark:text-stone-200">
                     Steps:
                   </Text>

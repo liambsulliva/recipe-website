@@ -54,19 +54,19 @@ export default function TabOneScreen() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <View className="flex-1 flex-row justify-between">
-        <View className="mx-12 my-24 flex-1">
-          <Text className="text-6xl dark:text-stone-100 font-bold my-4">Explore</Text>
-          <View className="flex-row mb-4">
+        <ScrollView className="mx-12 my-24 flex-1">
+          <Text className="text-6xl dark:text-stone-100 font-bold mt-4">Explore</Text>
+          <View className="flex-row my-3">
             <Button label="Carbs" onPress={() => setCurrentIndex(0)} />
             <Button label="Fats" onPress={() => setCurrentIndex(1)} />
             <Button label="Proteins" onPress={() => setCurrentIndex(2)} />
           </View>
-          <ScrollView className="flex-1">
+          <View className="flex-1">
             {currentIndex === 0 && renderPosts(allPosts[0])}
             {currentIndex === 1 && renderPosts(allPosts[1])}
             {currentIndex === 2 && renderPosts(allPosts[2])}
-          </ScrollView>
-        </View>
+          </View>
+        </ScrollView>
       </View>
     </GestureHandlerRootView>
   );

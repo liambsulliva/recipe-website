@@ -54,7 +54,7 @@ export default function TabOneScreen() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <View className="flex-1 flex-row justify-between">
-        <ScrollView className="mx-12 my-24 flex-1">
+        <ScrollView className="px-12 py-24 flex-1">
           <Text className="text-6xl dark:text-stone-100 font-bold mt-4">Explore</Text>
           <View className="flex-row my-3">
             <Button label="Carbs" onPress={() => setCurrentIndex(0)} />

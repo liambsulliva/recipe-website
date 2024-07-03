@@ -9,7 +9,7 @@ export default function TabTwoScreen() {
   const [switch5Value, setSwitch5Value] = useState(false);
 
   return (
-    <View className='h-screen'>
+    <View className='h-screen my-16'>
       <Text className='text-center text-2xl dark:text-stone-100 font-bold p-8 pb-4'>Flip Us!</Text>
       <View className='flex flex-row justify-between items-center px-8 py-2'>
         <Text className='dark:text-stone-400'>Switch 1</Text>

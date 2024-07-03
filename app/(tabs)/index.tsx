@@ -6,8 +6,6 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { allPosts, post } from '@/constants/Recipes';
 import ToastModal from '@/components/ToastModal';
 
-
-
 const renderPosts = (posts: post[]) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedPost, setSelectedPost] = useState<post>({title: "", description: "", img: "", ingredients: [""], steps: [""]});
@@ -56,7 +54,7 @@ export default function TabOneScreen() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <View className="flex-1 flex-row justify-between">
-        <View className="m-12 flex-1">
+        <View className="mx-12 my-24 flex-1">
           <Text className="text-6xl dark:text-stone-100 font-bold my-4">Explore</Text>
           <View className="flex-row mb-4">
             <Button label="Carbs" onPress={() => setCurrentIndex(0)} />

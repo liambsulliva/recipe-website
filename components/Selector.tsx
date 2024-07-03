@@ -1,4 +1,4 @@
-import React, { SetStateAction, useState } from 'react';
+import React, { useState } from 'react';
 import { Text, View, Switch } from 'react-native';
 
 interface SelectorProps {
@@ -44,7 +44,7 @@ const Selector = ({ title, label1, label2, label3, state }: SelectorProps) => {
     return (
         <View className='flex flex-col gap-2 mb-8'>
             <Text className='text-sm text-left px-4 text-stone-500'>{title}</Text>
-            <View className='flex flex-col px-4 bg-white rounded-lg'>
+            <View className='flex flex-col px-4 bg-white dark:bg-stone-800 rounded-lg'>
                 <View className='flex flex-row py-2 justify-between items-center'>
                     <Text className='dark:text-stone-400'>{label1}</Text>
                     <Switch value={switch1Value} onValueChange={handleSwitch1Change} />

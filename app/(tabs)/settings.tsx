@@ -23,7 +23,6 @@ export default function TabTwoScreen() {
   return (
     <ScrollView className='h-screen w-full py-16 px-8'>
       <Text className='text-center text-2xl dark:text-stone-100 font-bold p-8 pb-4'>Settings</Text>
-      <Selector title='Language' label1='English' label2='Deutsch' />
       <Selector title='Theme' label1='Automatic' label2='Light' label3='Dark' state={setAppTheme} />
     </ScrollView>
   );

@@ -4,37 +4,41 @@ import Footer from "../components/Footer.astro";
 import { getCollection } from "astro:content";
 import LandingPageContainer from "../components/LandingPageContainer";
 
-const carbs = (await getCollection("carbs")).sort(
-	(a, b) => a.data.title.localeCompare(b.data.title)
+const carbs = (await getCollection("carbs")).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title)
 );
-const fats = (await getCollection("fats")).sort(
-	(a, b) => a.data.title.localeCompare(b.data.title)
+const fats = (await getCollection("fats")).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title)
 );
-const proteins = (await getCollection("proteins")).sort(
-	(a, b) => a.data.title.localeCompare(b.data.title)
+const proteins = (await getCollection("proteins")).sort((a, b) =>
+  a.data.title.localeCompare(b.data.title)
 );
-
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Home</title>
-	</head>
-	<body class="bg-[#f8fafc] dark:bg-[#0f0f0f] text-black dark:text-white">
-		<Header />
-		<LandingPageContainer {carbs} {fats} {proteins} client:load />
-	</body>
-	<script>
-        // This script will run on the client side
-        document.addEventListener('DOMContentLoaded', () => {
-            const isDarkMode = localStorage.getItem('darkMode') === 'true';
-            if (isDarkMode) {
-                document.documentElement.classList.add('dark');
-            }
-        });
-    </script>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Home</title>
+  </head>
+  <body class="bg-[#f8fafc] dark:bg-[#0f0f0f] text-black dark:text-white">
+    <Header />
+    <LandingPageContainer {carbs} {fats} {proteins} client:load />
+  </body>
+  <script>
+    // This script will run on the client side
+    document.addEventListener("DOMContentLoaded", () => {
+      const isDarkMode = localStorage.getItem("darkMode") === "true";
+      if (isDarkMode) {
+        document.documentElement.classList.add("dark");
+      }
+    });
+  </script>
+  <style>
+    body {
+      font-family: Helvetica, sans-serif;
+    }
+  </style>
 </html>

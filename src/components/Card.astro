@@ -36,7 +36,9 @@ const finalImg = item ? item.data.img : img;
   >
     {
       finalImg && (
-        <div class={`w-full overflow-hidden ${featured ? "h-fill" : "h-48"}`}>
+        <div
+          class={`w-full overflow-hidden ${featured ? "h-fill max-h-[600px]" : "h-48"}`}
+        >
           <img
             src={finalImg}
             alt={finalTitle}

@@ -1,0 +1,112 @@
+---
+import Card from "./Card.astro";
+
+interface Props {
+  items: Array<{
+    title: string;
+    description: string;
+    href: string;
+  }>;
+}
+
+const { items } = Astro.props;
+---
+
+<div class="p-4 md:p-8 w-1/2">
+  <div class="max-w-6xl mx-auto">
+    <!-- Desktop Grid Layout (2x2) -->
+    <div class="hidden md:grid md:grid-cols-2 md:gap-6 lg:gap-8">
+      {
+        items.map((item) => (
+          <Card
+            title={item.title}
+            description={item.description}
+            href={item.href}
+          />
+        ))
+      }
+    </div>
+
+    <!-- Mobile Carousel Layout -->
+    <div class="md:hidden">
+      <div
+        class="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 scrollbar-hide"
+      >
+        {
+          items.map((item) => (
+            <div class="flex-none w-80 snap-start">
+              <Card
+                title={item.title}
+                description={item.description}
+                href={item.href}
+              />
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Carousel Indicators -->
+      <div class="flex justify-center gap-2 mt-4">
+        {
+          items.map((_, index) => (
+            <button
+              class="w-2 h-2 rounded-full bg-gray-300 transition-colors duration-200 hover:bg-gray-400"
+              data-slide={index}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script>
+  // Simple carousel functionality for mobile
+  const carousel = document.querySelector(".flex.overflow-x-auto");
+  const indicators = document.querySelectorAll("[data-slide]");
+
+  if (carousel && indicators.length > 0) {
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener("click", () => {
+        const cardWidth = 320; // w-80 = 320px
+        const gap = 16; // gap-4 = 16px
+        const scrollPosition = index * (cardWidth + gap);
+
+        carousel.scrollTo({
+          left: scrollPosition,
+          behavior: "smooth",
+        });
+
+        // Update active indicator
+        indicators.forEach((ind) => ind.classList.remove("bg-gray-400"));
+        indicator.classList.add("bg-gray-400");
+      });
+    });
+
+    // Update indicators on scroll
+    carousel.addEventListener("scroll", () => {
+      const cardWidth = 320;
+      const gap = 16;
+      const scrollLeft = carousel.scrollLeft;
+      const activeIndex = Math.round(scrollLeft / (cardWidth + gap));
+
+      indicators.forEach((indicator, index) => {
+        if (index === activeIndex) {
+          indicator.classList.add("bg-gray-400");
+        } else {
+          indicator.classList.remove("bg-gray-400");
+        }
+      });
+    });
+  }
+</script>

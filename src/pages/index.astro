@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { getCollection } from "astro:content";
 import LandingPageContainer from "../components/LandingPageContainer";
+import Grid from "../components/Grid.astro";
 
 const carbs = (await getCollection("carbs")).sort((a, b) =>
   a.data.title.localeCompare(b.data.title)
@@ -25,7 +26,27 @@ const proteins = (await getCollection("proteins")).sort((a, b) =>
   </head>
   <body class="bg-[#f8fafc] dark:bg-[#0f0f0f] text-black dark:text-white">
     <Header />
-    <LandingPageContainer {carbs} {fats} {proteins} client:load />
+    <main class="max-w-[1200px] mx-auto">
+      <div>
+        <div class="m-8">
+          <h1 class="text-4xl font-bold">DISCOVER</h1>
+          <p>Find something new.</p>
+        </div>
+        <div class="bg-gray-100">
+          <Grid items={carbs} />
+        </div>
+      </div>
+      <div>
+        <div class="m-8">
+          <h1 class="text-4xl font-bold">BUILD</h1>
+          <p>Start with a staple, adjust to taste.</p>
+        </div>
+        <div class="bg-gray-100">
+          <Grid items={carbs} />
+        </div>
+      </div>
+    </main>
+    <Footer />
   </body>
   <script>
     // This script will run on the client side

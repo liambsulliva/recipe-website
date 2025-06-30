@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 import { getCollection } from "astro:content";
 import LandingPageContainer from "../components/LandingPageContainer";
 import Grid from "../components/Grid.astro";
+import Card from "../components/Card.astro";
 
 const carbs = (await getCollection("carbs")).sort((a, b) =>
   a.data.title.localeCompare(b.data.title)
@@ -27,22 +28,26 @@ const proteins = (await getCollection("proteins")).sort((a, b) =>
   <body class="bg-[#f8fafc] dark:bg-[#0f0f0f] text-black dark:text-white">
     <Header />
     <main class="max-w-[1200px] mx-auto">
-      <div>
-        <div class="m-8">
+      <div class="mt-12 my-24 mx-4">
+        <div class="my-8">
           <h1 class="text-4xl font-bold">DISCOVER</h1>
           <p>Find something new.</p>
         </div>
-        <div class="bg-gray-100">
+        <div
+          class="flex flex-col md:flex-row-reverse gap-4 bg-gray-100 p-4 rounded-lg"
+        >
+          <Card item={proteins[0]} />
           <Grid items={carbs} />
         </div>
       </div>
-      <div>
-        <div class="m-8">
+      <div class="mt-12 mb-24 mx-4">
+        <div class="my-8">
           <h1 class="text-4xl font-bold">BUILD</h1>
-          <p>Start with a staple, adjust to taste.</p>
+          <p>Start with a base, adjust to taste.</p>
         </div>
-        <div class="bg-gray-100">
-          <Grid items={carbs} />
+        <div class="flex flex-col md:flex-row gap-4 bg-gray-100 p-4 rounded-lg">
+          <Card item={proteins[2]} />
+          <Grid items={fats} />
         </div>
       </div>
     </main>

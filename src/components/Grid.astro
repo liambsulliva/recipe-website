@@ -3,28 +3,24 @@ import Card from "./Card.astro";
 
 interface Props {
   items: Array<{
-    title: string;
-    description: string;
-    href: string;
+    id: string;
+    slug: string;
+    data: {
+      title: string;
+      description: string;
+      img?: string;
+    };
   }>;
 }
 
 const { items } = Astro.props;
 ---
 
-<div class="p-4 md:p-8 w-1/2">
+<div class="w-full md:w-1/2">
   <div class="max-w-6xl mx-auto">
     <!-- Desktop Grid Layout (2x2) -->
-    <div class="hidden md:grid md:grid-cols-2 md:gap-6 lg:gap-8">
-      {
-        items.map((item) => (
-          <Card
-            title={item.title}
-            description={item.description}
-            href={item.href}
-          />
-        ))
-      }
+    <div class="hidden md:grid md:grid-cols-2 gap-4">
+      {items.map((item) => <Card item={item} />)}
     </div>
 
     <!-- Mobile Carousel Layout -->
@@ -35,11 +31,7 @@ const { items } = Astro.props;
         {
           items.map((item) => (
             <div class="flex-none w-80 snap-start">
-              <Card
-                title={item.title}
-                description={item.description}
-                href={item.href}
-              />
+              <Card item={item} />
             </div>
           ))
         }

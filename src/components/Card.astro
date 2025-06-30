@@ -5,6 +5,7 @@ interface Props {
   description?: string;
   href?: string;
   img?: string;
+  featured?: boolean;
   // OR a markdown file (content collection item)
   item?: {
     id: string;
@@ -17,7 +18,7 @@ interface Props {
   };
 }
 
-const { title, description, href, img, item } = Astro.props;
+const { title, description, href, img, featured = false, item } = Astro.props;
 
 // If item is provided, use its data; otherwise use individual props
 const finalTitle = item ? item.data.title : title || "Featured Recipe";
@@ -35,7 +36,7 @@ const finalImg = item ? item.data.img : img;
   >
     {
       finalImg && (
-        <div class="w-full h-48 overflow-hidden">
+        <div class={`w-full overflow-hidden ${featured ? "h-fill" : "h-48"}`}>
           <img
             src={finalImg}
             alt={finalTitle}
@@ -44,14 +45,14 @@ const finalImg = item ? item.data.img : img;
         </div>
       )
     }
-    <div class="p-6">
+    <div class={`${featured ? "p-8" : "p-6"}`}>
       <h2
-        class="text-xl font-semibold text-gray-800 mb-3 group-hover:text-gray-900 transition-colors duration-200"
+        class={`font-semibold text-gray-800 mb-3 group-hover:text-gray-900 transition-colors duration-200 ${featured ? "text-2xl" : "text-xl"}`}
       >
         {finalTitle}
       </h2>
       <p
-        class="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-200"
+        class={`text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-200 ${featured ? "text-lg" : ""}`}
       >
         {finalDescription}
       </p>

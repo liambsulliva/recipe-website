@@ -36,7 +36,7 @@ const proteins = (await getCollection("proteins")).sort((a, b) =>
         <div
           class="flex flex-col md:flex-row-reverse gap-4 bg-gray-100 p-4 rounded-lg"
         >
-          <Card item={proteins[0]} />
+          <Card item={proteins[0]} featured={true} />
           <Grid items={carbs} />
         </div>
       </div>
@@ -46,7 +46,7 @@ const proteins = (await getCollection("proteins")).sort((a, b) =>
           <p>Start with a base, adjust to taste.</p>
         </div>
         <div class="flex flex-col md:flex-row gap-4 bg-gray-100 p-4 rounded-lg">
-          <Card item={proteins[2]} />
+          <Card item={proteins[2]} featured={true} />
           <Grid items={fats} />
         </div>
       </div>

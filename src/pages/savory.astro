@@ -9,9 +9,7 @@ import Card from "../components/Card.astro";
 const savory = (await getCollection("savory")).sort((a, b) =>
   a.data.title.localeCompare(b.data.title)
 );
-const sweet = (await getCollection("sweet")).sort((a, b) =>
-  a.data.title.localeCompare(b.data.title)
-);
+
 ---
 
 <html lang="en">
@@ -25,18 +23,6 @@ const sweet = (await getCollection("sweet")).sort((a, b) =>
   <body class="bg-[#f8fafc] dark:bg-[#0f0f0f] text-black dark:text-white">
     <Header />
     <main class="max-w-[1200px] mx-auto">
-      <div class="mt-12 my-24 mx-4">
-        <div class="my-8">
-          <h1 class="text-4xl font-bold uppercase">Sweet</h1>
-          <p class="text-gray-600">Crave-worthy confections.</p>
-        </div>
-        <div
-          class="flex flex-col md:flex-row-reverse gap-4 bg-gray-100 p-4 rounded-lg"
-        >
-          <Card item={sweet[0]} featured={true} />
-          <Grid items={sweet} />
-        </div>
-      </div>
       <div class="mt-12 mb-24 mx-4">
         <div class="my-8">
           <h1 class="text-4xl font-bold uppercase">Savory</h1>

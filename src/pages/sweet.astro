@@ -6,9 +6,6 @@ import LandingPageContainer from "../components/LandingPageContainer";
 import Grid from "../components/Grid.astro";
 import Card from "../components/Card.astro";
 
-const savory = (await getCollection("savory")).sort((a, b) =>
-  a.data.title.localeCompare(b.data.title)
-);
 const sweet = (await getCollection("sweet")).sort((a, b) =>
   a.data.title.localeCompare(b.data.title)
 );
@@ -35,20 +32,6 @@ const sweet = (await getCollection("sweet")).sort((a, b) =>
         >
           <Card item={sweet[0]} featured={true} />
           <Grid items={sweet} />
-        </div>
-      </div>
-      <div class="mt-12 mb-24 mx-4">
-        <div class="my-8">
-          <h1 class="text-4xl font-bold uppercase">Savory</h1>
-          <p class="text-gray-600">Big flavors. Simple steps.</p>
-          {
-            /*<h1>BUILD</h1>
-          <p>Start with a base, adjust to taste.</p>*/
-          }
-        </div>
-        <div class="flex flex-col md:flex-row gap-4 bg-gray-100 p-4 rounded-lg">
-          <Card item={savory[0]} featured={true} />
-          <Grid items={savory} />
         </div>
       </div>
     </main>

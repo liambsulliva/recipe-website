@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/Page.astro
 title: "Honey Mustard Chicken Thighs"
 description: "Tangy Sweet Perfection."
 img: "./honeymustardchicken.jpg"

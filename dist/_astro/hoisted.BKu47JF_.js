@@ -1,0 +1,1 @@
+import"./Grid.astro_astro_type_script_index_0_lang._4ssrFB-.js";document.addEventListener("DOMContentLoaded",()=>{localStorage.getItem("darkMode")==="true"&&document.documentElement.classList.add("dark")});

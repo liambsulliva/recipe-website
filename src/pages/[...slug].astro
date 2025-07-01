@@ -1,49 +1,41 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
+import Page from "../layouts/Page.astro";
 
 export async function getStaticPaths() {
-  const carbs = await getCollection("carbs");
-  const fats = await getCollection("fats");
-  const proteins = await getCollection("proteins");
+  const savory = await getCollection("savory");
+  const sweet = await getCollection("sweet");
 
   const paths: object[] = [];
 
-  // Add paths for carbs
-  carbs.forEach((carb: any) => {
-    const { slug } = carb;
+  // Add paths for savory
+  savory.forEach((recipe: any) => {
+    const { slug } = recipe;
     paths.push({
       params: { slug },
-      props: carb,
+      props: recipe,
     });
   });
 
-  // Add paths for fats
-  fats.forEach((fat: any) => {
-    const { slug } = fat;
+  // Add paths for sweet
+  sweet.forEach((recipe: any) => {
+    const { slug } = recipe;
     paths.push({
       params: { slug },
-      props: fat,
-    });
-  });
-
-  // Add paths for proteins
-  proteins.forEach((protein: any) => {
-    const { slug } = protein;
-    paths.push({
-      params: { slug },
-      props: protein,
+      props: recipe,
     });
   });
 
   return paths;
 }
 
-type Props = CollectionEntry<"carbs"> | CollectionEntry<"fats"> | CollectionEntry<"proteins">;
+type Props = CollectionEntry<"savory"> | CollectionEntry<"sweet">;
 
 const post: Props = Astro.props;
 const { Content } = await post.render();
-
 ---
 
-<Content />
+<Page frontmatter={post.data}>
+  <Content />
+</Page>
